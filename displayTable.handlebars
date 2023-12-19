@@ -1,0 +1,59 @@
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+
+<form id='filter_people' action='' method=''>
+<!--- this form does not submit directly, the button handles all the interaction with backend -->
+    <label> Filter by projects </label>
+    <select id='homeworld_filter' name="homeworld"> 
+        {{#each projects}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select><br>
+    <input type="button" value="Filter" onclick="filterPeopleByHomeworld()">
+</form>
+
+<form id='search_employee' action='' method=''>
+<!--- this form does not submit directly, the button handles all the interaction with backend -->
+    <label> Search employee for first name starting with:</label>
+    <input id='first_name_search_string' type='text' name='first_name_search_string' value=''>
+    <input type="button" value="Search" onclick="searchEmployeeByFirstName()">
+</form>
+
+<h1>Company Database</h1>
+<h2> Current Employees </h2>
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Salary</th>
+            <th>Dno</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each people}}
+        <tr>
+            <td>{{this.fname}}</td>
+            <td>{{this.lname}}</td>
+            <td>{{this.Salary}}</td>
+            <td>{{this.Dno}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<!-- Form for displaying the table -->
+{{!-- <form action="/displayTable" method="post">
+    <!-- Add form fields here if needed -->
+    <input type="submit" value="Display Table">
+</form> --}}
+    <section>
+        <footer>
+            By Dontulak
+        </footer>
+    </section>
+
+
+</html>

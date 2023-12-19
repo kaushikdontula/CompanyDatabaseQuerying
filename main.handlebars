@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/index.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    {{#each jsscripts}}
+    <script src="/static/{{this}}"></script>
+    {{/each}}
+	<title>Demo Page</title>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+
+
+		/* Reset some default styles for consistency */
+body, h1, h2, h3, p, ul, li, form, label, select, input, table {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply styles to the whole page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Apply styles to the main heading */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #009688; /* Teal color */
+}
+
+/* Apply styles to the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Apply styles to table headers */
+thead {
+    background-color: #009688;
+    color: #fff;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Apply styles to form elements */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select, input[type="text"], input[type="button"] {
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+/* Apply styles to the footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #009688;
+    color: #fff;
+}
+	</style>
+</head>
+<body>
+	{{{body}}}
+</body>
+</html>
